@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+{% load i18n %}
+{% load static %}
+<html lang="{{ LANGUAGE_CODE }}">
+<head>
+  <title>{% block title %}{{ site.name }}{% endblock %}</title>
+  {% block meta %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Saleor">
+    <meta name="theme-color" content="#333333">
+    <meta name="msapplication-TileColor" content="#2b5797">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="{{ site.name }}">
+    <meta name="og:type" content="website">
+   
+  {% endblock meta %}
+
+  
+
+  {% block stylesheet %}
+        <!-- Libs CSS -->
+    <link rel="stylesheet" href="{% static 'dashboard/assets/fonts/feather/feather.min.css' %}">
+    <link rel="stylesheet" href="{% static 'dashboard/assets/libs/highlight.js/styles/vs2015.css' %}">
+    <link rel="stylesheet" href="{% static 'dashboard/assets/libs/quill/dist/quill.core.css' %}">
+    <link rel="stylesheet" href="{% static 'dashboard/assets/libs/select2/dist/css/select2.min.css' %}">
+    <link rel="stylesheet" href="{% static 'dashboard/assets/libs/flatpickr/dist/flatpickr.min.css' %}">
+
+    <!-- Theme CSS -->
+      
+    <link rel="stylesheet" href="{% static 'dashboard/assets/css/theme.min.css' %}" id="stylesheetLight">
+
+    <link rel="stylesheet" href="{% static 'dashboard/assets/css/theme-dark.min.css' %}" id="stylesheetDark">
+
+    <style>body { display: none; }</style>
+  {% endblock stylesheet %}
+
+  {% block meta_tags %}
+    <meta property="og:title" content="{{ site.settings.translated.header_text }}">
+    <meta property="og:description" content="{{ site.settings.translated.description }}">
+    <meta name="description" content="{{ site.settings.translated.description }}">
+    <meta property="og:url" content="{{ request.build_absolute_uri }}">
+    <meta property="og:image" content="{% static "images/block1.png" %}">
+  {% endblock meta_tags %}
+
+ 
+</head>
+
+<body class="d-flex align-items-center bg-auth border-top border-top-2 border-primary">
+{% block header %}
+{% endblock %}
+
+  {% block topcontent %}
+  {% endblock topcontent %}
+
+
+  
+
+
+  {% block breadcrumb %}
+  {% endblock breadcrumb %}
+
+
+  {% block content %}
+  {% endblock content %}
+
+{% block footer %}
+{% endblock %}
+
+{% block footer_scripts %}
+     <!-- JAVASCRIPT
+    ================================================== -->
+    <!-- Libs JS -->
+    <script src="{% static 'dashboard/assets/libs/jquery/dist/jquery.min.js' %}"></script>
+    <script src="{% static 'dashboard/assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'dashboard/assets/libs/chart.js/dist/Chart.min.js' %}"></script>
+    <script src="{% static 'dashboard/assets/libs/highlightjs/highlight.pack.min.js' %}"></script>
+    <script src="{% static 'dashboard/assets/libs/flatpickr/dist/flatpickr.min.js' %}"></script>
+    <script src="{% static 'dashboard/assets/libs/jquery-mask-plugin/dist/jquery.mask.min.js' %}"></script>
+    <script src="{% static 'dashboard/assets/libs/list.js/dist/list.min.js' %}"></script>
+    <script src="{% static 'dashboard/assets/libs/quill/dist/quill.min.js' %}"></script>
+    <script src="{% static 'dashboard/assets/libs/dropzone/dist/min/dropzone.min.js' %}"></script>
+    <script src="{% static 'dashboard/assets/libs/select2/dist/js/select2.min.js' %}"></script>
+    <script src="{% static 'dashboard/assets/libs/chart.js/Chart.extension.min.js' %}"></script>
+
+    <!-- Theme JS -->
+    <script src="{% static 'dashboard/assets/js/theme.min.js' %}"></script>
+{% endblock footer_scripts %}
+
+</body>
+</html>

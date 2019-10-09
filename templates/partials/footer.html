@@ -1,0 +1,112 @@
+{% load static %}
+<footer>
+  <!-- Lists -->
+  <div class="border-bottom">
+    <div class="container space-2">
+      <div class="row justify-content-md-between">
+        <div class="col-sm-4 col-lg-2 mb-4 mb-lg-0">
+          <h4 class="h6 font-weight-semi-bold">About</h4>
+
+          <!-- List Group -->
+          <ul class="list-group list-group-flush list-group-borderless mb-0">
+            <li><a class="list-group-item list-group-item-action" href="{% url 'about' %}">About</a></li>
+            <li><a class="list-group-item list-group-item-action" href="{% url 'services' %}">Services</a></li>
+            <li><a class="list-group-item list-group-item-action" href="{% url 'careers' %}">Careers</a></li>
+          </ul>
+          <!-- End List Group -->
+        </div>
+
+        <div class="col-sm-4 col-lg-2 mb-4 mb-lg-0">
+          <h4 class="h6 font-weight-semi-bold">Extra</h4>
+
+          <!-- List Group -->
+          <ul class="list-group list-group-flush list-group-borderless mb-0">
+            <li><a class="list-group-item list-group-item-action" href="{% url 'seminars' %}">Seminars</a></li>
+            <li><a class="list-group-item list-group-item-action" href="{% url 'workshops' %}">Workshops</a></li>
+          </ul>
+          <!-- End List Group -->
+        </div>
+
+        <div class="col-sm-4 col-lg-2 mb-4 mb-lg-0">
+          <h4 class="h6 font-weight-semi-bold">Resources</h4>
+
+          <!-- List Group -->
+          <ul class="list-group list-group-flush list-group-borderless mb-0">
+            <li><a class="list-group-item list-group-item-action" href="{% url 'help' %}">Help</a></li>
+            <li><a class="list-group-item list-group-item-action" href="{% url 'terms' %}">Terms &amp; Conditions</a></li>
+            <li><a class="list-group-item list-group-item-action" href="{% url 'privacy' %}">Privacy &amp; Policy</a></li>
+          </ul>
+          <!-- End List Group -->
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+           <!-- Social Networks -->
+        <ul class="list-inline mb-0">
+            <li class="list-inline-item">
+              <a class="btn btn-sm btn-icon btn-soft-secondary btn-bg-transparent" href="https://www.facebook.com/designweb.dds/">
+                <span class="fab fa-facebook-f btn-icon__inner"></span>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a class="btn btn-sm btn-icon btn-soft-secondary btn-bg-transparent" href="https://www.intagram.com/d.designers/">
+                <span class="fab fa-instagram btn-icon__inner"></span>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a class="btn btn-sm btn-icon btn-soft-secondary btn-bg-transparent" href="https://www.twitter.com/DreamDesigners7/">
+                <span class="fab fa-twitter btn-icon__inner"></span>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a class="btn btn-sm btn-icon btn-soft-secondary btn-bg-transparent" href="https://www.youtube.com/channel/UC4_GUAr58aM4-21p6RX1PWw">
+                <span class="fab fa-youtube btn-icon__inner"></span>
+              </a>
+            </li>
+          </ul>
+          <!-- End Social Networks -->
+          <h4 class="h6 font-weight-semi-bold mb-4">We are driven to deliver results for all your businesses.</h4>
+
+          <!-- Button -->
+          <button type="button" class="btn btn-xs btn-dark btn-wide transition-3d-hover text-left mb-2 mr-1" title="Under Development">
+            <span class="media align-items-center">
+              <span class="fab fa-apple fa-2x mr-3"></span>
+              <span class="media-body">
+                <span class="d-block">Download on the</span>
+                <strong class="font-size-1">App Store</strong>
+              </span>
+            </span>
+          </button>
+          <!-- End Button -->
+
+          <!-- Button -->
+          <button type="button" class="btn btn-xs btn-dark btn-wide transition-3d-hover text-left mb-2" title="Under Development">
+            <span class="media align-items-center">
+              <span class="fab fa-google-play fa-2x mr-3"></span>
+              <span class="media-body">
+                <span class="d-block">Get it on</span>
+                <strong class="font-size-1">Google Play</strong>
+              </span>
+            </span>
+          </button>
+          <!-- End Button -->
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End Lists -->
+
+  <!-- Copyright -->
+  <div class="container text-center space-1">
+    <!-- Logo -->
+    <a class="d-inline-flex align-items-center mb-2" href="{% url 'main_index' %}" aria-label="Front">
+      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="36px" height="36px" viewBox="0 0 46 46" xml:space="preserve" style="margin-bottom: 0;">
+
+      </svg>
+      <span class="brand brand-primary"><img src="{% static 'img/uploads/DSTUDY_LOGO.png' %}" height="100" width="250" alt="Dstudy"></span>
+    </a>
+    <!-- End Logo -->
+    <p class="small text-muted">&copy; Dstudy. 2018 Dream Designers. All rights reserved.</p>
+  </div>
+  <!-- End Copyright -->
+</footer>
+

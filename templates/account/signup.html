@@ -1,0 +1,104 @@
+{% extends 'account/base.html' %}
+{% load static %}
+{% load i18n %}
+{% load crispy_forms_tags %}
+{% block content %}
+<!-- CONTENT
+    ================================================== -->
+    <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-12 col-md-5 col-xl-4 my-5">
+              {% block error %}
+              {% if form.errors %}
+      {% for field in form %}
+          {% for error in field.errors %}
+          <div class="alert alert-primary alert-dismissible fade show" role="alert">
+              <strong>Hey !</strong> {{ error }}
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>     
+          {% endfor %}
+      {% endfor %}
+      {% for error in form.non_field_errors %}
+      <div class="alert alert-primary alert-dismissible fade show" role="alert">
+          <strong>Hey !</strong> {{ error|escape }}.
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div> 
+      {% endfor %}
+  {% endif %}
+              {% endblock %}
+               
+            
+            <!-- Heading -->
+            <h1 class="display-4 text-center mb-3">
+              Sign up
+            </h1>
+            
+            <!-- Subheading -->
+            <p class="text-muted text-center mb-5">
+              Free access to our resources.
+            </p>
+            <form  method="POST" id="signup_form" action="{% url 'account_signup' %}">{% csrf_token %}
+  
+              <!-- Email address -->
+              <div class="form-group">
+  
+                <!-- Label -->
+                <label>Email Address</label>
+  
+                <!-- Input -->
+                <input type="email" class="form-control" name="email" placeholder="name@address.com">
+  
+              </div>
+  
+              <!-- Password -->
+              <div class="form-group">
+  
+                <div class="row">
+                  <div class="col">
+                        
+                    <!-- Label -->
+                    <label>Password</label>
+  
+                  </div>
+                  
+                </div> <!-- / .row -->
+  
+                <!-- Input group -->
+                <div class="input-group input-group-merge">
+  
+                  <!-- Input -->
+                  <input type="password" name="password1" class="form-control form-control-appended" placeholder="Enter your password">
+  
+                  <!-- Icon -->
+                  <div class="input-group-append">
+                    <span class="input-group-text">
+                      <i class="fe fe-eye"></i>
+                    </span>
+                  </div>
+  
+                </div>
+              </div>
+  
+              <!-- Submit -->
+              <button class="btn btn-lg btn-block btn-primary mb-3">
+                Sign Up
+              </button>
+  
+              <!-- Link -->
+              <div class="text-center">
+                <small class="text-muted text-center">
+                  Already have an account? <a href="{{ login_url }}">Sign In</a>.
+                </small>
+              </div>
+              
+            </form>
+            
+  
+          </div>
+        </div> <!-- / .row -->
+      </div> <!-- / .container -->
+{% endblock %}

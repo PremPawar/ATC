@@ -1,0 +1,82 @@
+{% extends 'user/base.html'%}
+{% load static %}
+{% block content %}
+<div class="container-fluid">
+        <div class="row justify-content-center">
+          <div class="col-12 col-lg-10 col-xl-8">
+
+            <!-- Header -->
+            <div class="header mt-md-5">
+              <div class="header-body">
+                <div class="row align-items-center">
+                  <div class="col">
+
+                    <!-- Pretitle -->
+                    <h6 class="header-pretitle">
+                      ATC Control
+                    </h6>
+
+                    <!-- Title -->
+                    <h1 class="header-title">
+                      Add New ATC
+
+                  </div>
+                </div> <!-- / .row -->
+              </div>
+            </div>
+
+            <!-- Form -->
+            <form class="mb-4" method="POST" action="{% url 'add_atc' %}" enctype="multipart/form-data">{% csrf_token %}
+
+              <!-- Project name -->
+              <div class="form-group">
+                <label>
+                  ATC Name
+                </label>
+                <!-- <input type="text" class="form-control"> -->
+                  {{ form.name }}
+              </div>
+
+              <div class="form-group">
+                  <label>
+                    No Of Atc
+                  </label>
+                  <!-- <input type="text" class="form-control"> -->
+                  {{ form.runways }}
+                </div>
+
+                <div class="form-group">
+                        <label>
+                          Take-off Limits
+                        </label>
+                        <!-- <input type="text" class="form-control"> -->
+                        {{ form.takeoff_limit }}
+                      </div>
+
+                      <div class="form-group">
+                            <label>
+                              Landing Limits
+                            </label>
+                            <!-- <input type="text" class="form-control"> -->
+                            {{ form.landing_limit }}
+                          </div>
+
+
+              <!-- Divider -->
+              <hr class="mt-5 mb-5">
+
+              <!-- Buttons -->
+                <button type="submit" class="btn btn-block btn-primary">
+                    Submit
+                </button>
+
+              <a href="#" class="btn btn-block btn-link text-muted">
+                Cancel this post
+              </a>
+
+            </form>
+
+          </div>
+        </div> <!-- / .row -->
+      </div>
+{% endblock %}

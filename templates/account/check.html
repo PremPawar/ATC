@@ -1,0 +1,87 @@
+{% extends 'account/base.html' %}
+{% load static %}
+{% load i18n %}
+{% load crispy_forms_tags %}
+{% block content %}
+<!-- CONTENT
+    ================================================== -->
+    <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-12 col-md-5 col-xl-4 my-5">
+              {% block error %}
+                  {% if messages %}
+                    {% for message in messages %}
+                      <div class="alert {% if message.tags %} {{ message.tags }}{% endif %} alert-dismissible fade show" role="alert">
+                          <strong>Hey !</strong> {{ message }}
+                          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                    {% endfor %}
+                  {% endif %}
+              {% endblock %}
+               
+            
+            <!-- Heading -->
+            <h1 class="display-4 text-center mb-3">
+              {{ user.email }}
+            </h1>
+            
+            <!-- Subheading -->
+            <p class="text-muted text-center mb-5">
+              please complete your profile...
+            </p>
+
+            
+            <a href={% url 'complete_profile_names' %}><button class="btn btn-lg btn-block btn-{% if user.first_name and user.last_name %}success{% else %}primary{% endif %} mb-3">
+              {% if user.first_name and user.last_name %}
+                {{ user.first_name }} {{ user.last_name }}
+              {% else %}
+                Update Personal Details
+                {% endif %}
+              </button></a>
+              <a href="{% url 'complete_personal_details' %}">
+                <button class="btn btn-lg btn-block btn-{% if user.profile.mobile or user.profile.landline %}success{% else %}primary{% endif %} mb-3">
+                    {% if user.profile.mobile or user.profile.landline %}
+                    {{ user.profile.mobile }}/{{ user.profile.landline}}
+                  {% else %}
+                  Update Contact Details
+                    {% endif %}
+                  
+                </button>
+              </a>
+                  <a href="{% url 'complete_address_details' %}">
+                    <button class="btn btn-lg btn-block btn-{% if user.profile.city and user.profile.district and user.profile.state %}success{% else %}primary{% endif %} mb-3">
+                        {% if user.profile.city or user.profile.state %}
+                        {{ user.profile.city }},{{ user.profile.district}},{{ user.profile.state}}
+                      {% else %}
+                      Update Address Details
+                        {% endif %}
+                      
+                    </button>
+                  </a>
+                </a>
+                <a href="{% url 'complete_department_details' %}">
+                  <button class="btn btn-lg btn-block btn-{% if user.profile.department and user.profile.designation %}success{% else %}primary{% endif %} mb-3">
+                      {% if user.profile.department or user.profile.designation %}
+                      {{ user.profile.department }}-{{ user.profile.designation}}
+                    {% else %}
+                    Update Department Details
+                      {% endif %}
+                    
+                  </button>
+                </a>            
+              <!-- Link -->
+              <div class="text-center" hidden>
+                <small class="text-muted text-center">
+                  do it later for now <a href="#">Skip</a>.
+                </small>
+              </div>
+              
+            </form>
+            
+  
+          </div>
+        </div> <!-- / .row -->
+      </div> <!-- / .container -->
+{% endblock %}

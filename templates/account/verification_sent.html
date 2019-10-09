@@ -1,0 +1,58 @@
+{% extends 'account/base.html' %}
+{% load static %}
+{% load i18n %}
+{% load account %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+    <!-- CONTENT
+    ================================================== -->
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-5 col-xl-4 my-5">
+                {% block error %}
+
+                {% if messages %}
+      {% for message in messages %}
+        
+  
+        <div class="alert alert-{% if message.tags %} alert-{{ message.tags }}{% endif %} alert-dismissible fade show" role="alert">
+            <strong>Hey !</strong> {{ message }}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+      {% endfor %}
+    {% endif %}
+  
+                
+                {% endblock %}
+          <!-- Heading -->
+          <h1 class="display-4 text-center mb-3">
+                Verify your email address
+          </h1>
+          
+          <!-- Subheading -->
+          <p class="text-muted text-center mb-5">
+                We have sent an e-mail to you for verification. Follow the link provided to finalize the signup process. Please contact us if you do not receive it within a few minutes.
+          </p>
+         
+            <!-- Submit -->
+            <a href="#"><button class="btn btn-lg btn-block btn-primary mb-3">
+                    Thank you ! Sorry for inconvinience...
+                  </button></a>
+
+            <!-- Link -->
+            <div class="text-center">
+              <small class="text-muted text-center">
+                    Please contact us if you have any trouble in account confirmation.
+              </small>
+            </div>
+            
+          
+          
+
+        </div>
+      </div> <!-- / .row -->
+    </div> <!-- / .container -->
+    {% endblock %}

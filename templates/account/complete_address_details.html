@@ -1,0 +1,97 @@
+{% extends 'account/base.html' %}
+{% load static %}
+{% load i18n %}
+{% load crispy_forms_tags %}
+{% block content %}
+<!-- CONTENT
+    ================================================== -->
+    <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-12 col-md-5 col-xl-4 my-5">
+              {% block error %}
+                  {% if messages %}
+                    {% for message in messages %}
+                      <div class="alert {% if message.tags %} {{ message.tags }}{% endif %} alert-dismissible fade show" role="alert">
+                          <strong>Hey !</strong> {{ message }}
+                          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                    {% endfor %}
+                  {% endif %}
+              {% endblock %}
+               
+            
+            <!-- Heading -->
+            <h1 class="display-4 text-center mb-3">
+              {{ user.email }}
+            </h1>
+            
+            <!-- Subheading -->
+            <p class="text-muted text-center mb-5">
+              please enter your name...
+            </p>
+            <form class="js-validate" method="POST"  enctype="multipart/form-data">{% csrf_token %}
+              <!-- Email address -->
+              <div class="form-group">
+  
+                <!-- Label -->
+                <label>Address</label>
+  
+                <!-- Input -->
+                {{ address_form.address }}
+  
+              </div>
+
+              <div class="form-group">
+  
+                <!-- Label -->
+                <label>Pin Code</label>
+  
+                <!-- Input -->
+                {{ address_form.pin_code }}
+  
+              </div>
+              <div class="form-group">
+  
+                <!-- Label -->
+                <label>City</label>
+  
+                <!-- Input -->
+                {{ address_form.city }}
+  
+              </div>
+              <div class="form-group">
+  
+                <!-- Label -->
+                <label>District</label>
+  
+                <!-- Input -->
+                {{ address_form.district }}
+  
+              </div>
+              <div class="form-group">
+  
+                    <!-- Label -->
+                    <label>State</label>
+      
+                    <!-- Input -->
+                    {{ address_form.state }}
+      
+                  </div>
+              
+  
+              <!-- Submit -->
+              <button class="btn btn-lg btn-block btn-primary mb-3">
+                Proceed
+              </button>
+  
+              
+              
+            </form>
+            
+  
+          </div>
+        </div> <!-- / .row -->
+      </div> <!-- / .container -->
+{% endblock %}

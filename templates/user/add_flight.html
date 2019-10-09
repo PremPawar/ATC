@@ -1,0 +1,97 @@
+{% extends 'user/base.html'%}
+{% load static %}
+{% block content %}
+<div class="container-fluid">
+        <div class="row justify-content-center">
+          <div class="col-12 col-lg-10 col-xl-8">
+
+            <!-- Header -->
+            <div class="header mt-md-5">
+              <div class="header-body">
+                <div class="row align-items-center">
+                  <div class="col">
+
+                    <!-- Pretitle -->
+                    <h6 class="header-pretitle">
+                      Flight Control
+                    </h6>
+
+                    <!-- Title -->
+                    <h1 class="header-title">
+                      Add New Flight
+
+                  </div>
+                </div> <!-- / .row -->
+              </div>
+            </div>
+
+            <!-- Form -->
+            <form class="mb-4" method="POST" action="{% url 'add_flight' %}" enctype="multipart/form-data">{% csrf_token %}
+
+              <!-- Project name -->
+              <div class="form-group">
+                <label>
+                  Name
+                </label>
+                <!-- <input type="text" class="form-control"> -->
+                  {{ form.name }}
+              </div>
+
+              <div class="form-group">
+                  <label>
+                    Starting ATC
+                  </label>
+                  <!-- <input type="text" class="form-control"> -->
+                  {{ form.starting_atc }}
+                </div>
+
+                <div class="form-group">
+                        <label>
+                                Ending ATC
+                        </label>
+                        <!-- <input type="text" class="form-control"> -->
+                        {{ form.ending_atc }}
+
+                    </div>
+
+                    <div class="form-group">
+                            <label>
+                                    Starting Time
+                            </label>
+                            <!-- <input type="text" class="form-control"> -->
+                            {{ form.starting_time }}
+                        </div>
+                        
+                
+                        <div class="form-group">
+                                <label>
+                                     Ending Time
+                                </label>
+                                <!-- <input type="text" class="form-control"> -->
+                                {{ form.expected_end }}
+                            </div>
+
+                            <div class="form-group">
+                                    <label>
+                                         Path
+                                    </label>
+                                    <!-- <input type="text" class="form-control"> -->
+                                    {{ form.path }}
+                                </div>
+
+              <!-- Divider -->
+              <hr class="mt-5 mb-5">
+
+              <!-- Buttons -->
+                <button type="submit" class="btn btn-block btn-primary">
+                    Submit
+                </button>
+
+             
+
+            </form>
+
+          </div>
+        </div> <!-- / .row -->
+      </div>
+{% endblock %}

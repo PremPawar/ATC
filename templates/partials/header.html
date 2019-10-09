@@ -1,0 +1,784 @@
+{% load static %}
+{% if messages %}
+    <!-- Cookie Alert -->
+    <div class="container position-fixed bottom-0 right-0 left-0 z-index-4" id="message" >
+        <div class="alert alert-light w-lg-80 border shadow-sm mx-auto" role="alert">
+          <h5 class="h6 text-dark font-weight-semi-bold">Server is trying to say something</h5>
+          {% for message in messages %}
+          <p class="small"><strong>Message : </strong> <span>{{message}}</span></p>
+          {% endfor %}
+            </div>
+            
+          </div>
+        </div>
+    </div>
+    <!-- End Cookie Alert -->
+{% endif %}
+<header id="header" class="u-header u-header--abs-top-md u-header--bg-transparent u-header--show-hide-md"
+        data-header-fix-moment="500"
+        data-header-fix-effect="slide">
+  <!-- Search -->
+  <div id="searchPushTop" class="u-search-push-top">
+    <div class="container position-relative">
+      <div class="u-search-push-top__content">
+        <!-- Close Button -->
+        <button type="button" class="close u-search-push-top__close-btn"
+                aria-haspopup="true"
+                aria-expanded="false"
+                aria-controls="searchPushTop"
+                data-unfold-type="jquery-slide"
+                data-unfold-target="#searchPushTop">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <!-- End Close Button -->
+
+        <!-- Input -->
+        <form class="js-focus-state input-group input-group-lg">
+          <input type="search" class="form-control" placeholder="Search Dstudy" aria-label="Search Dstudy">
+          <div class="input-group-append">
+            <button type="button" class="btn btn-primary">Search</button>
+          </div>
+        </form>
+        <!-- End Input -->
+
+        <!-- Content -->
+        <div class="row d-none d-md-flex mt-7">
+          <div class="col-sm-6" hidden="hidden">
+            <strong class="d-block mb-2">Quick Links</strong>
+
+            <div class="row">
+              <!-- List Group -->
+              <div class="col-6">
+                <div class="list-group list-group-transparent list-group-flush list-group-borderless">
+                  <a class="list-group-item list-group-item-action" href="#">
+                    <span class="fas fa-angle-right list-group-icon"></span>
+                    Search Results List
+                  </a>
+                  <a class="list-group-item list-group-item-action" href="#">
+                    <span class="fas fa-angle-right list-group-icon"></span>
+                    Search Results Grid
+                  </a>
+                  <a class="list-group-item list-group-item-action" href="#">
+                    <span class="fas fa-angle-right list-group-icon"></span>
+                    About
+                  </a>
+                  <a class="list-group-item list-group-item-action" href="#">
+                    <span class="fas fa-angle-right list-group-icon"></span>
+                    Services
+                  </a>
+                  <a class="list-group-item list-group-item-action" href="#">
+                    <span class="fas fa-angle-right list-group-icon"></span>
+                    Invoice
+                  </a>
+                </div>
+              </div>
+              <!-- End List Group -->
+
+              <!-- List Group -->
+              <div class="col-6">
+                <div class="list-group list-group-transparent list-group-flush list-group-borderless">
+                  <a class="list-group-item list-group-item-action" href="#">
+                    <span class="fas fa-angle-right list-group-icon"></span>
+                    Profile
+                  </a>
+                  <a class="list-group-item list-group-item-action" href="#">
+                    <span class="fas fa-angle-right list-group-icon"></span>
+                    User Contacts
+                  </a>
+                  <a class="list-group-item list-group-item-action" href="#">
+                    <span class="fas fa-angle-right list-group-icon"></span>
+                    Reviews
+                  </a>
+                  <a class="list-group-item list-group-item-action" href="#">
+                    <span class="fas fa-angle-right list-group-icon"></span>
+                    Settings
+                  </a>
+                </div>
+              </div>
+              <!-- End List Group -->
+            </div>
+          </div>
+
+          <div class="col-sm-6" hidden="hidden">
+            <!-- Banner -->
+            <div class="rounded u-search-push-top__banner">
+              <div class="d-flex align-items-center">
+                <div class="u-search-push-top__banner-container">
+                  <img class="img-fluid u-search-push-top__banner-img" src="{% static 'img/uploads/java.png' %}" alt="Image Description">
+                  
+                </div>
+
+                <div>
+                  <div class="mb-4">
+                    <strong class="d-block mb-2">Featured Courses</strong>
+                    <p>Start studyin new technology and see something new.</p>
+                  </div>
+                  <a class="btn btn-xs btn-soft-success transition-3d-hover" href="#">Apply Now <span class="fas fa-angle-right ml-2"></span></a>
+                </div>
+              </div>
+            </div>
+            <!-- End Banner -->
+          </div>
+        </div>
+        <!-- End Content -->
+      </div>
+    </div>
+  </div>
+  <!-- End Search -->
+
+  <div class="u-header__section">
+    <!-- Topbar -->
+    <div class="container u-header__hide-content pt-2">
+      <div class="d-flex align-items-center">
+        <!-- Language -->
+        <div class="position-relative">
+          <a id="languageDropdownInvoker" class="dropdown-nav-link dropdown-toggle d-flex align-items-center" href="javascript:;" role="button"
+             aria-controls="languageDropdown"
+             aria-haspopup="true"
+             aria-expanded="false"
+             data-unfold-event="hover"
+             data-unfold-target="#languageDropdown"
+             data-unfold-type="css-animation"
+             data-unfold-duration="300"
+             data-unfold-delay="300"
+             data-unfold-hide-on-scroll="true"
+             data-unfold-animation-in="slideInUp"
+             data-unfold-animation-out="fadeOut">
+            <img class="dropdown-item-icon" src="{% static 'img/uploads/logo.png' %}" alt="IMG">
+            <span class="d-inline-block d-sm-none">EN</span>
+            <span class="d-none d-sm-inline-block">ENGLISH</span>
+          </a>
+
+          <div id="languageDropdown" class="dropdown-menu dropdown-unfold" aria-labelledby="languageDropdownInvoker">
+            <a class="dropdown-item active" href="#">ENGLISH</a>
+            <a class="dropdown-item" href="#">MARATHI</a>
+          </div>
+        </div>
+        <!-- End Language -->
+
+        <div class="ml-auto">
+          <!-- Jump To -->
+          <div class="d-inline-block d-sm-none position-relative mr-2">
+            <a id="jumpToDropdownInvoker" class="dropdown-nav-link dropdown-toggle d-flex align-items-center" href="javascript:;" role="button"
+               aria-controls="jumpToDropdown"
+               aria-haspopup="true"
+               aria-expanded="false"
+               data-unfold-event="hover"
+               data-unfold-target="#jumpToDropdown"
+               data-unfold-type="css-animation"
+               data-unfold-duration="300"
+               data-unfold-delay="300"
+               data-unfold-hide-on-scroll="true"
+               data-unfold-animation-in="slideInUp"
+               data-unfold-animation-out="fadeOut">
+              Jump to
+            </a>
+
+            <div id="jumpToDropdown" class="dropdown-menu dropdown-unfold" aria-labelledby="jumpToDropdownInvoker">
+              <a class="dropdown-item" href="{% url 'help' %}">Help</a>
+              <a class="dropdown-item" href="{% url 'contact' %}">Contacts</a>
+            </div>
+          </div>
+          <!-- End Jump To -->
+
+          <!-- Links -->
+          <div class="d-none d-sm-inline-block ml-sm-auto">
+            <ul class="list-inline mb-0">
+              <li class="list-inline-item mr-0">
+                <a class="u-header__navbar-link" href="{% url 'help' %}">Help</a>
+              </li>
+              <li class="list-inline-item mr-0">
+                <a class="u-header__navbar-link" href="{% url 'contact' %}">Contacts</a>
+              </li>
+            </ul>
+          </div>
+          <!-- End Links -->
+        </div>
+
+        <ul class="list-inline ml-2 mb-0">
+          <!-- Search -->
+          <li class="list-inline-item">
+            <a class="btn btn-xs btn-icon btn-text-secondary" href="javascript:;" role="button"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                    aria-controls="searchPushTop"
+                    data-unfold-type="jquery-slide"
+                    data-unfold-target="#searchPushTop">
+                    <span class="fas fa-search btn-icon__inner"></span>
+              <span class="fas fa-search btn-icon__inner"></span>
+            </a>
+          </li>
+          <!-- End Search -->
+
+          <!-- Shopping Cart -->
+          <li class="list-inline-item position-relative">
+            <a id="shoppingCartDropdownInvoker" class="btn btn-xs btn-icon btn-text-secondary" href="javascript:;" role="button"
+                    aria-controls="shoppingCartDropdown"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                    data-unfold-event="hover"
+                    data-unfold-target="#shoppingCartDropdown"
+                    data-unfold-type="css-animation"
+                    data-unfold-duration="300"
+                    data-unfold-delay="300"
+                    data-unfold-hide-on-scroll="true"
+                    data-unfold-animation-in="slideInUp"
+                    data-unfold-animation-out="fadeOut">
+                    <span class="fas fa-shopping-cart btn-icon__inner"></span>
+            </a>
+
+            <div id="shoppingCartDropdown" class="dropdown-menu dropdown-unfold dropdown-menu-right text-center p-7" aria-labelledby="shoppingCartDropdownInvoker" style="min-width: 250px;">
+              <span class="btn btn-icon btn-soft-primary rounded-circle mb-3">
+               <span class="fas fa-shopping-basket btn-icon__inner"></span>
+              </span>
+              <span class="d-block">Your Cart is Empty</span>
+            </div>
+          </li>
+          <!-- End Shopping Cart -->
+
+          {% if user.is_authenticated %}
+            <!-- Account Login -->
+          <li class="list-inline-item">
+              <!-- Account Sidebar Toggle Button -->
+              <a id="sidebarNavToggler" class="btn btn-xs btn-text-secondary u-sidebar--account__toggle-bg ml-1" href="javascript:;" role="button"
+                 aria-controls="sidebarContent"
+                 aria-haspopup="true"
+                 aria-expanded="false"
+                 data-unfold-event="click"
+                 data-unfold-hide-on-scroll="false"
+                 data-unfold-target="#sidebarContent"
+                 data-unfold-type="css-animation"
+                 data-unfold-animation-in="fadeInRight"
+                 data-unfold-animation-out="fadeOutRight"
+                 data-unfold-duration="500">
+                <span class="position-relative">
+                    <span class="u-sidebar--account__toggle-text">{{ user.email }}</span>
+                    <img class="u-sidebar--account__toggle-img" src="{% static 'img/uploads/user.png' %}" alt="User">
+                    <span class="badge badge-sm badge-success badge-pos rounded-circle">3</span>
+                  
+                </span>
+              </a>
+              <!-- End Account Sidebar Toggle Button -->
+            </li>
+            <!-- End Account Login -->
+          {% else %}
+          <!-- Account Login -->
+          <li class="list-inline-item">
+              <!-- Account Sidebar Toggle Button -->
+              <a id="sidebarNavToggler" class="btn btn-xs btn-icon btn-text-secondary" href="javascript:;" role="button"
+                 aria-controls="sidebarContent"
+                 aria-haspopup="true"
+                 aria-expanded="false"
+                 data-unfold-event="click"
+                 data-unfold-hide-on-scroll="false"
+                 data-unfold-target="#sidebarContent"
+                 data-unfold-type="css-animation"
+                 data-unfold-animation-in="fadeInRight"
+                 data-unfold-animation-out="fadeOutRight"
+                 data-unfold-duration="500">
+                <span class="fas fa-user-circle btn-icon__inner font-size-1">
+  
+                </span>
+                <!-- <img class="u-sidebar--account__toggle-img" src=""> -->
+              </a>
+              <!-- End Account Sidebar Toggle Button -->
+            </li>
+            <!-- End Account Login -->
+         {% endif %}
+          
+        </ul>
+      </div>
+    </div>
+    <!-- End Topbar -->
+
+    <div id="logoAndNav" class="container">
+      <!-- Nav -->
+      <nav class="js-mega-menu navbar navbar-expand-md u-header__navbar u-header__navbar--no-space">
+        <!-- Logo -->
+        <a class="navbar-brand u-header__navbar-brand u-header__navbar-brand-center" href="{% url 'main_index' %}" aria-label="Front">
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="46px" height="46px" viewBox="0 0 46 46" xml:space="preserve" style="margin-bottom: 0;">
+
+          </svg>
+          <span class="u-header__navbar-brand-text"><img src="{% static 'img/uploads/DSTUDY_LOGO.png' %}" height="100" width="250" alt="Dstudy"></span>
+        </a>
+        <!-- End Logo -->
+
+        <!-- Responsive Toggle Button -->
+        <button type="button" class="navbar-toggler btn u-hamburger"
+                aria-label="Toggle navigation"
+                aria-expanded="false"
+                aria-controls="navBar"
+                data-toggle="collapse"
+                data-target="#navBar">
+          <span id="hamburgerTrigger" class="u-hamburger__box">
+            <span class="u-hamburger__inner"></span>
+          </span>
+        </button>
+        <!-- End Responsive Toggle Button -->
+
+        <!-- Navigation -->
+        <div id="navBar" class="collapse navbar-collapse u-header__navbar-collapse">
+          <ul class="navbar-nav u-header__navbar-nav">
+            <!-- Home -->
+            <li class="nav-item hs-has-mega-menu u-header__nav-item"
+                data-event="hover"
+                data-animation-in="slideInUp"
+                data-animation-out="fadeOut"
+                data-position="left" hidden="hidden">
+              <a id="homeMegaMenu" class="nav-link u-header__nav-link u-header__nav-link-toggle" href="javascript:;" aria-haspopup="true" aria-expanded="false"> Resources </a>
+
+              <!-- Home - Mega Menu -->
+              <div class="hs-mega-menu w-100 u-header__sub-menu" aria-labelledby="homeMegaMenu">
+                <div class="row no-gutters">
+                  <div class="col-lg-6">
+                    <!-- Banner Image -->
+                    <div class="u-header__banner" style="background-image: url('{% static 'img/1920x800/img5.jpg' %}');">
+                      <div class="u-header__banner-content">
+                        <div class="mb-4">
+                          <span class="u-header__banner-title">Exclusive Dstudy</span>
+                          <p class="u-header__banner-text">Experience a level of our quality resources &amp; exclusive courses.</p>
+                        </div>
+                        <a class="btn btn-primary btn-sm transition-3d-hover" href="#">See More <span class="fas fa-angle-right ml-2"></span></a>
+                      </div>
+                    </div>
+                    <!-- End Banner Image -->
+                  </div>
+
+                  <div class="col-lg-6">
+                    <div class="row u-header__mega-menu-wrapper">
+                      <div class="col-sm-6 mb-3 mb-sm-0">
+                        <span class="u-header__sub-menu-title"> MSTBTE </span>
+                        <ul class="u-header__sub-menu-nav-group mb-3">
+                          <li><a class="nav-link u-header__sub-menu-nav-link" href="index.html">Course 1</a></li>
+                          <li><a class="nav-link u-header__sub-menu-nav-link" href="classic-business.html">Course 2</a></li>
+                          <li><a class="nav-link u-header__sub-menu-nav-link" href="classic-marketing.html"> Course 3</a></li>
+                          <li><a class="nav-link u-header__sub-menu-nav-link" href="classic-consulting.html">Course 4</a></li>
+                          <li><a class="nav-link u-header__sub-menu-nav-link" href="classic-start-up.html"> Course 5 <span class="badge badge-success badge-primary ml-1">New</span></a></li>
+                        </ul>
+
+                        <span class="u-header__sub-menu-title"> Development </span>
+                        <ul class="u-header__sub-menu-nav-group">
+                          <li><a class="nav-link u-header__sub-menu-nav-link" href="corporate-agency.html">Course 1</a></li>
+                          <li><a class="nav-link u-header__sub-menu-nav-link" href="corporate-start-up.html"> Course 2</a></li>
+                          <li><a class="nav-link u-header__sub-menu-nav-link" href="corporate-business.html">Course 3 </a></li>
+                        </ul>
+                      </div>
+
+                      <div class="col-sm-6">
+                        <span class="u-header__sub-menu-title">Personel Development </span>
+                        <ul class="u-header__sub-menu-nav-group mb-3">
+                          <li><a class="nav-link u-header__sub-menu-nav-link" href="onepage-creative.html"> Course 1 <span class="badge badge-success badge-primary ml-1">New</span></a></li>
+                          <li><a class="nav-link u-header__sub-menu-nav-link" href="onepage-saas.html">Course 2 <span class="badge badge-success badge-primary ml-1">New</span></a></li>
+                        </ul>
+
+                        <span class="u-header__sub-menu-title"> College Specific </span>
+                        <ul class="u-header__sub-menu-nav-group mb-3">
+                          <li><a class="nav-link u-header__sub-menu-nav-link" href="blog-agency.html">Course 1 </a></li>
+                          <li><a class="nav-link u-header__sub-menu-nav-link" href="blog-start-up.html">Course 2</a></li>
+                          <li><a class="nav-link u-header__sub-menu-nav-link" href="blog-business.html">Course 3 </a></li>
+                        </ul>
+
+                        <span class="u-header__sub-menu-title">Stream Specific </span>
+                        <ul class="u-header__sub-menu-nav-group">
+                          <li><a class="nav-link u-header__sub-menu-nav-link" href="portfolio-agency.html"> Course 1 </a></li>
+                          <li><a class="nav-link u-header__sub-menu-nav-link" href="portfolio-profile.html"> Course 2 </a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- End Home - Mega Menu -->
+            </li>
+            <!-- End Home -->
+
+            <!-- Pages -->
+            <li class="nav-item hs-has-sub-menu u-header__nav-item"
+                data-event="hover"
+                data-animation-in="slideInUp"
+                data-animation-out="fadeOut">
+              <a id="pagesMegaMenu" class="nav-link u-header__nav-link u-header__nav-link-toggle" href="javascript:;" aria-haspopup="true" aria-expanded="false" aria-labelledby="pagesSubMenu">Resources</a>
+
+              <!-- Pages - Submenu -->
+              <ul id="pagesSubMenu" class="hs-sub-menu u-header__sub-menu" aria-labelledby="pagesMegaMenu" style="min-width: 230px;">
+                <!-- Account -->
+                <li class="hs-has-sub-menu">
+                  <a id="navLinkPagesAccount" class="nav-link u-header__sub-menu-nav-link u-header__sub-menu-nav-link-toggle" href="javascript:;" aria-haspopup="true" aria-expanded="false" aria-controls="navSubmenuPagesAccount">MSBTE</a>
+                  <ul id="navSubmenuPagesAccount" class="hs-sub-menu u-header__sub-menu" aria-labelledby="navLinkPagesAccount" style="min-width: 230px;">
+                    <li><a class="nav-link u-header__sub-menu-nav-link" href="{% url 'curriculms' %}">Curriculam </a></li>
+                    <li><a class="nav-link u-header__sub-menu-nav-link" href="https://htmlstream.com/preview/front-v2.1/html/account/profile.html" hidden="hidden">Examinations </a></li>
+                    <li><a class="nav-link u-header__sub-menu-nav-link" href="http://43.240.64.241:81/frmSR18BTE.aspx" target="_blank"> Results </a></li>
+                    <li><a class="nav-link u-header__sub-menu-nav-link" href="{% url 'quetionpapers' %}"> Question Paper Search </a></li>
+                    <li><a class="nav-link u-header__sub-menu-nav-link" href="{% url 'modelanswerpapers' %}"> Model Paper Search</a></li>
+                    <li><a class="nav-link u-header__sub-menu-nav-link" href="{% url 'academic_courses' %}"> Courses </a></li>
+                    <li><a class="nav-link u-header__sub-menu-nav-link" href="{% url 'subjects' %}"> Subjects </a></li>
+                  </ul>
+                </li>
+                <!-- End Account -->
+
+                <!-- Portfolio -->
+                <li class="hs-has-sub-menu">
+                  <a id="navLinkPagesPortfolio" class="nav-link u-header__sub-menu-nav-link u-header__sub-menu-nav-link-toggle" href="javascript:;" aria-haspopup="true" aria-expanded="false" aria-controls="navSubmenuPagesPortfolio" hidden="hidden">SPPU</a>
+
+                  <ul id="navSubmenuPagesPortfolio" class="hs-sub-menu u-header__sub-menu" aria-labelledby="navLinkPagesPortfolio" style="min-width: 230px;">
+                    <li><a class="nav-link u-header__sub-menu-nav-link" href="https://htmlstream.com/preview/front-v2.1/html/portfolio/boxed-classic.html"> Examinations </a></li>
+                    <li class="dropdown-divider"></li>
+                    <li><a class="nav-link u-header__sub-menu-nav-link" href="https://htmlstream.com/preview/front-v2.1/html/portfolio/case-studies-simple.html">Case Studies Simple</a></li>
+                    <li><a class="nav-link u-header__sub-menu-nav-link" href="https://htmlstream.com/preview/front-v2.1/html/portfolio/case-studies-modern.html">Case Studies Modern</a></li>
+                    <li class="dropdown-divider"></li>
+                    <li><a class="nav-link u-header__sub-menu-nav-link" href="https://htmlstream.com/preview/front-v2.1/html/portfolio/single-page-simple.html"> Curriculam </a></li>
+                    <li><a class="nav-link u-header__sub-menu-nav-link" href="https://htmlstream.com/preview/front-v2.1/html/portfolio/single-page-grid.html">Notice</a></li>
+                    <li><a class="nav-link u-header__sub-menu-nav-link" href="https://htmlstream.com/preview/front-v2.1/html/portfolio/single-page-masonry.html">Activity</a></li>
+                  </ul>
+                </li>
+                <!-- End Portfolio -->
+
+                <!-- About -->
+                <li class="hs-has-sub-menu">
+                  <a id="navLinkPagesAbout" class="nav-link u-header__sub-menu-nav-link u-header__sub-menu-nav-link-toggle" href="javascript:;" aria-haspopup="true" aria-expanded="false" aria-controls="navSubmenuPagesAbout" hidden="hidden"> Dstudy </a>
+
+                  <ul id="navSubmenuPagesAbout" class="hs-sub-menu u-header__sub-menu" aria-labelledby="navLinkPagesAbout" style="min-width: 230px;">
+                    <li><a class="nav-link u-header__sub-menu-nav-link" href="https://htmlstream.com/preview/front-v2.1/html/pages/about-agency.html"> Courses </a></li>
+                    <li><a class="nav-link u-header__sub-menu-nav-link" href="https://htmlstream.com/preview/front-v2.1/html/pages/about-start-up.html"> Resources </a></li>
+                  </ul>
+                </li>
+                <!-- About -->
+
+                <!-- Services -->
+                <li class="hs-has-sub-menu">
+                  <a id="navLinkPagesServices" class="nav-link u-header__sub-menu-nav-link u-header__sub-menu-nav-link-toggle" href="javascript:;" aria-haspopup="true" aria-expanded="false" aria-controls="navSubmenuPagesServices" hidden="hidden"> Interns </a>
+
+                  <ul id="navSubmenuPagesServices" class="hs-sub-menu u-header__sub-menu" aria-labelledby="navLinkPagesServices" style="min-width: 230px;">
+                    <li><a class="nav-link u-header__sub-menu-nav-link" href="https://htmlstream.com/preview/front-v2.1/html/pages/services-agency.html">Show Internships</a></li>
+                    <li><a class="nav-link u-header__sub-menu-nav-link" href="https://htmlstream.com/preview/front-v2.1/html/pages/services-start-up.html"> Appllied Internships </a></li>
+                  </ul>
+                </li>
+                <!-- Services -->
+
+                <!-- Careers -->
+                <li class="hs-has-sub-menu">
+                  <a id="navLinkPagesCareers" class="nav-link u-header__sub-menu-nav-link u-header__sub-menu-nav-link-toggle" href="javascript:;" aria-haspopup="true" aria-expanded="false" aria-controls="navSubmenuPagesCareers" hidden="hidden"> Exams  </a>
+
+                  <ul id="navSubmenuPagesCareers" class="hs-sub-menu u-header__sub-menu" aria-labelledby="navLinkPagesCareers" style="min-width: 230px;">
+                    <li><a class="nav-link u-header__sub-menu-nav-link" href="https://htmlstream.com/preview/front-v2.1/html/pages/careers.html">By College</a></li>
+                    <li><a class="nav-link u-header__sub-menu-nav-link" href="https://htmlstream.com/preview/front-v2.1/html/pages/careers-single.html">By Dstudy </a></li>
+                  </ul>
+                </li>
+                <!-- Careers -->
+
+                <!-- Login -->
+                <li class="hs-has-sub-menu" hidden="hidden">
+                  <a id="navLinkPagesLogin" class="nav-link u-header__sub-menu-nav-link u-header__sub-menu-nav-link-toggle" href="javascript:;" aria-haspopup="true" aria-expanded="false" aria-controls="navSubmenuPagesLogin">Login &amp; Signup</a>
+
+                  <ul id="navSubmenuPagesLogin" class="hs-sub-menu u-header__sub-menu" aria-labelledby="navLinkPagesLogin" style="min-width: 230px;">
+                    <li><a class="nav-link u-header__sub-menu-nav-link" href="https://htmlstream.com/preview/front-v2.1/html/pages/login.html">Login</a></li>
+                    <li><a class="nav-link u-header__sub-menu-nav-link" href="https://htmlstream.com/preview/front-v2.1/html/pages/signup.html">Signup</a></li>
+                    <li><a class="nav-link u-header__sub-menu-nav-link" href="https://htmlstream.com/preview/front-v2.1/html/pages/recover-account.html">Recover Account</a></li>
+                    <li class="dropdown-divider"></li>
+                    <li><a class="nav-link u-header__sub-menu-nav-link" href="https://htmlstream.com/preview/front-v2.1/html/pages/login-simple.html">Login Simple</a></li>
+                    <li><a class="nav-link u-header__sub-menu-nav-link" href="https://htmlstream.com/preview/front-v2.1/html/pages/signup-simple.html">Signup Simple</a></li>
+                    <li><a class="nav-link u-header__sub-menu-nav-link" href="https://htmlstream.com/preview/front-v2.1/html/pages/recover-account-simple.html">Recover Account Simple</a></li>
+                  </ul>
+                </li>
+                <!-- Signup -->
+
+                <!-- Contacts -->
+                <li class="hs-has-sub-menu" hidden="hidden">
+                  <a id="navLinkContactsServices" class="nav-link u-header__sub-menu-nav-link u-header__sub-menu-nav-link-toggle" href="javascript:;" aria-haspopup="true" aria-expanded="false" aria-controls="navSubmenuContactsServices">Contacts</a>
+
+                  <ul id="navSubmenuContactsServices" class="hs-sub-menu u-header__sub-menu" aria-labelledby="navLinkContactsServices" style="min-width: 230px;">
+                    <li><a class="nav-link u-header__sub-menu-nav-link" href="https://htmlstream.com/preview/front-v2.1/html/pages/contacts-agency.html">Contacts Agency</a></li>
+                    <li><a class="nav-link u-header__sub-menu-nav-link" href="https://htmlstream.com/preview/front-v2.1/html/pages/contacts-start-up.html">Contacts Start-Up</a></li>
+                  </ul>
+                </li>
+                <!-- Contacts -->
+
+                <!-- Utilities -->
+                <li class="hs-has-sub-menu"  hidden="hidden">
+                  <a id="navLinkPagesUtilities" class="nav-link u-header__sub-menu-nav-link u-header__sub-menu-nav-link-toggle" href="javascript:;" aria-haspopup="true" aria-expanded="false" aria-controls="navSubmenuPagesUtilities">Utilities</a>
+
+                  <ul id="navSubmenuPagesUtilities" class="hs-sub-menu u-header__sub-menu" aria-labelledby="navLinkPagesUtilities" style="min-width: 230px;">
+                    <li><a class="nav-link u-header__sub-menu-nav-link" href="https://htmlstream.com/preview/front-v2.1/html/pages/help.html">Help</a></li>
+                    <li><a class="nav-link u-header__sub-menu-nav-link" href="https://htmlstream.com/preview/front-v2.1/html/pages/help-article.html">Help article</a></li>
+                    <li><a class="nav-link u-header__sub-menu-nav-link" href="https://htmlstream.com/preview/front-v2.1/html/pages/faq.html">FAQ</a></li>
+                    <li><a class="nav-link u-header__sub-menu-nav-link" href="https://htmlstream.com/preview/front-v2.1/html/pages/pricing.html">Pricing</a></li>
+                    <li><a class="nav-link u-header__sub-menu-nav-link" href="https://htmlstream.com/preview/front-v2.1/html/pages/invoice.html">Invoice</a></li>
+                    <li><a class="nav-link u-header__sub-menu-nav-link" href="https://htmlstream.com/preview/front-v2.1/html/pages/terms.html">Terms &amp; Conditions</a></li>
+                    <li><a class="nav-link u-header__sub-menu-nav-link" href="https://htmlstream.com/preview/front-v2.1/html/pages/privacy.html">Privacy &amp; Policy</a></li>
+                  </ul>
+                </li>
+                <!-- Utilities -->
+
+                <!-- Specialty -->
+                <li class="hs-has-sub-menu" hidden="hidden">
+                  <a id="navLinkPagesSpecialty" class="nav-link u-header__sub-menu-nav-link u-header__sub-menu-nav-link-toggle" href="javascript:;" aria-haspopup="true" aria-expanded="false" aria-controls="navSubmenuPagesSpecialty">Specialty</a>
+
+                  <ul id="navSubmenuPagesSpecialty" class="hs-sub-menu u-header__sub-menu" aria-labelledby="navLinkPagesSpecialty" style="min-width: 230px;">
+                    <li><a class="nav-link u-header__sub-menu-nav-link" href="https://htmlstream.com/preview/front-v2.1/html/pages/cover-page.html">Cover Page</a></li>
+                    <li><a class="nav-link u-header__sub-menu-nav-link" href="https://htmlstream.com/preview/front-v2.1/html/pages/coming-soon.html">Coming Soon</a></li>
+                    <li><a class="nav-link u-header__sub-menu-nav-link" href="https://htmlstream.com/preview/front-v2.1/html/pages/maintenance-mode.html">Maintenance Mode</a></li>
+                    <li><a class="nav-link u-header__sub-menu-nav-link" href="https://htmlstream.com/preview/front-v2.1/html/pages/error-404.html">Error 404</a></li>
+                  </ul>
+                </li>
+                <!-- Specialty -->
+                <!-- Specialty -->
+                <li class="hs-has-sub-menu">
+                    <a id="navLinkPagesSpecialty" class="nav-link u-header__sub-menu-nav-link u-header__sub-menu-nav-link-toggle" href="javascript:;" aria-haspopup="true" aria-expanded="false" aria-controls="navSubmenuPagesSpecialty">Institutes</a>
+  
+                    <ul id="navSubmenuPagesSpecialty" class="hs-sub-menu u-header__sub-menu" aria-labelledby="navLinkPagesSpecialty" style="min-width: 230px;">
+                      <li><a class="nav-link u-header__sub-menu-nav-link" href="{% url 'universities' %}">Universities</a></li>
+                      <li><a class="nav-link u-header__sub-menu-nav-link" href="{% url 'colleges' %}">Colleges</a></li>
+                    </ul>
+                  </li>
+                  <!-- Specialty -->
+              </ul>
+              <!-- End Pages - Submenu -->
+            </li>
+            <!-- End Pages -->
+
+            <!-- Blog -->
+            <li class="nav-item hs-has-sub-menu u-header__nav-item"
+                data-event="hover"
+                data-animation-in="slideInUp"
+                data-animation-out="fadeOut">
+              <a id="blogMegaMenu" class="nav-link u-header__nav-link u-header__nav-link-toggle" href="javascript:;" aria-haspopup="true" aria-expanded="false" aria-labelledby="blogSubMenu">Forum</a>
+
+              <!-- Blog - Submenu -->
+              <ul id="blogSubMenu" class="hs-sub-menu u-header__sub-menu" aria-labelledby="blogMegaMenu" style="min-width: 230px;">
+                <!-- Classic -->
+                <li class="hs-has-sub-menu">
+                  <a id="navLinkBlogClassic" class="nav-link u-header__sub-menu-nav-link u-header__sub-menu-nav-link-toggle" href="javascript:;" aria-haspopup="true" aria-expanded="false" aria-controls="navSubmenuBlogClassic">Versions</a>
+
+                  <ul id="navSubmenuBlogClassic" class="hs-sub-menu u-header__sub-menu" aria-labelledby="navLinkBlogClassic" style="min-width: 230px;">
+                    <li><a class="nav-link u-header__sub-menu-nav-link" href="#"><small style="color:crimson">Selected Users Only</small></a></li>
+                    <li><a class="nav-link u-header__sub-menu-nav-link" href="#">Students Specific</a></li>
+                    <li><a class="nav-link u-header__sub-menu-nav-link" href="#">Teachers Specific</a></li>
+                    <li><a class="nav-link u-header__sub-menu-nav-link" href="#">Common</a></li>
+                  </ul>
+                </li>
+                <!-- Classic -->
+              </ul>
+              <!-- End Submenu -->
+            </li>
+            <!-- End Blog -->
+
+            <!-- Shop -->
+            <li class="nav-item hs-has-mega-menu u-header__nav-item"
+                data-event="hover"
+                data-animation-in="slideInUp"
+                data-animation-out="fadeOut"
+                data-max-width="440px"
+                data-position="right">
+              <a id="shopMegaMenu" class="nav-link u-header__nav-link u-header__nav-link-toggle" href="javascript:;" aria-haspopup="true" aria-expanded="false">Exclusive</a>
+
+              <!-- Shop - Mega Menu -->
+              <div class="hs-mega-menu u-header__sub-menu u-header__mega-menu-position-right-fix--md" aria-labelledby="shopMegaMenu">
+                <div class="u-header__mega-menu-wrapper">
+                  <span class="u-header__sub-menu-title">Dstudy Exlusive</span>
+                  <small style="color:crimson;">Content will be available shortly</small>
+                  <div class="row" hidden="hidden">
+                    <div class="col-sm-6">
+                      <ul class="u-header__sub-menu-nav-group">
+                        <li><a class="nav-link u-header__sub-menu-nav-link" href="https://htmlstream.com/preview/front-v2.1/html/shop/classic.html">Courses</a></li>
+                        <li><a class="nav-link u-header__sub-menu-nav-link" href="https://htmlstream.com/preview/front-v2.1/html/shop/masonry.html">Exams</a></li>
+                        <li><a class="nav-link u-header__sub-menu-nav-link" href="https://htmlstream.com/preview/front-v2.1/html/shop/single-product.html">Resources</a></li>
+                      </ul>
+                    </div>
+
+                    <div class="col-sm-6">
+                      <ul class="u-header__sub-menu-nav-group">
+                        <li><a class="nav-link u-header__sub-menu-nav-link" href="https://htmlstream.com/preview/front-v2.1/html/shop/cart.html">Workshops</a></li>
+                        <li><a class="nav-link u-header__sub-menu-nav-link" href="https://htmlstream.com/preview/front-v2.1/html/shop/checkout.html">Seminars</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Mega Menu Banner -->
+                <div class="u-header__product-banner">
+                  <div class="d-flex align-items-end">
+                    <img class="img-fluid mr-4" src="{% static 'img/uploads/exlusive.png' %}" alt="Image Description">
+                    <div class="u-header__product-banner-content">
+                      <div class="mb-4">
+                        <span class="u-header__product-banner-title">Java Course</span>
+                        <p class="u-header__product-banner-text">Start studying now for free.</p>
+                      </div>
+                      <a class="btn btn-sm btn-soft-primary transition-3d-hover" href="#">Learn More <span class="fas fa-angle-right ml-2"></span></a>
+                    </div>
+                  </div>
+                </div>
+                <!-- End Mega Menu Banner -->
+              </div>
+              <!-- End Shop - Mega Menu -->
+            </li>
+            <!-- End Shop -->
+
+            {% if user.is_authenticated %}
+              
+            {% else %}
+              <!-- Demos -->
+            <li class="nav-item hs-has-mega-menu u-header__nav-item"
+            data-event="hover"
+            data-animation-in="slideInUp"
+            data-animation-out="fadeOut"
+            data-max-width="600px"
+            data-position="right">
+          <a id="demosMegaMenu" class="nav-link u-header__nav-link u-header__nav-link-toggle" href="javascript:;" aria-haspopup="true" aria-expanded="false">Accounts</a>
+
+          <!-- Demos - Mega Menu -->
+          <div class="hs-mega-menu w-100 u-header__sub-menu" aria-labelledby="demosMegaMenu">
+            <div class="row no-gutters">
+              <div class="col-md-6">
+                <!-- Promo Item -->
+                <div class="u-header__promo-item">
+                  <a class="u-header__promo-link" href="#">
+                    <div class="media align-items-center">
+                      <img class="js-svg-injector u-header__promo-icon" src="{% static 'img/uploads/teacher.png' %}" alt="SVG">
+                      <div class="media-body">
+                        <span class="u-header__promo-title">Teacher</span>
+                        <small class="u-header__promo-text">Registered as teacher</small>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+                <!-- End Promo Item -->
+
+                <!-- Promo Item -->
+                <div class="u-header__promo-item">
+                  <a class="u-header__promo-link" href="#">
+                    <div class="media align-items-center">
+                      <img class="js-svg-injector u-header__promo-icon" src="{% static 'img/uploads/hod.png' %}" alt="SVG">
+                      <div class="media-body">
+                        <span class="u-header__promo-title"> HOD </span>
+                        <small class="u-header__promo-text">Select your college and department</small>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+                <!-- End Promo Item -->
+
+                <!-- Promo Item -->
+                <div class="u-header__promo-item">
+                  <a class="u-header__promo-link" href="#">
+                    <div class="media align-items-center">
+                      <img class="js-svg-injector u-header__promo-icon" src="{% static 'img/uploads/college.png' %}" alt="SVG">
+                      <div class="media-body">
+                        <span class="u-header__promo-title">College</span>
+                        <small class="u-header__promo-text">Add your college to Dstudy</small>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+                <!-- End Promo Item -->
+              </div>
+
+              <!-- Promo -->
+              <div class="col-md-6 u-header__promo">
+                <a class="d-block u-header__promo-inner" href="#">
+                  <div class="position-relative">
+                    <img class="img-fluid rounded mb-3" src="{% static 'img/uploads/company.png' %}" alt="Image Description">
+                    <span class="badge badge-success badge-pill badge-pos shadow-sm mt-3">Available Soon</span>
+                  </div>
+                  <span class="text-secondary font-size-1">For Companies to choose proper candidate for their company .</span>
+                </a>
+              </div>
+              <!-- End Promo -->
+            </div>
+          </div>
+          <!-- End Demos - Mega Menu -->
+        </li>
+        <!-- End Demos -->
+            {% endif %}
+
+            
+
+            <!-- Docs -->
+            <li class="nav-item hs-has-mega-menu u-header__nav-item"
+                data-event="hover"
+                data-animation-in="slideInUp"
+                data-animation-out="fadeOut"
+                data-max-width="260px"
+                data-position="right">
+              <a id="docsMegaMenu" class="nav-link u-header__nav-link u-header__nav-link-toggle" href="javascript:;" aria-haspopup="true" aria-expanded="false">Portal Guide</a>
+
+              <!-- Docs - Submenu -->
+              <div class="hs-mega-menu u-header__sub-menu" aria-labelledby="docsMegaMenu" style="min-width: 330px;">
+                <!-- Promo Item -->
+                <div class="u-header__promo-item">
+                  <a class="u-header__promo-link" href="#">
+                    <div class="media align-items-center">
+                      <img class="js-svg-injector u-header__promo-icon" src="{% static 'img/uploads/guide.png' %}" alt="SVG">
+                      <div class="media-body">
+                        <span class="u-header__promo-title">
+                          Guide 
+                          <span class="badge badge-primary badge-pill ml-1">v0.1</span>&nbsp;<small>BETA</small>
+                        </span>
+                        <small class="u-header__promo-text">Portal guides</small>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+                <!-- End Promo Item -->
+
+                <!-- Promo Item -->
+                <div class="u-header__promo-item" hidden="hidden">
+                  <a class="u-header__promo-link" href="https://htmlstream.com/preview/front-v2.1/starter/index.html">
+                    <div class="media align-items-center">
+                      <img class="js-svg-injector u-header__promo-icon" src="https://htmlstream.com/preview/front-v2.1/assets/svg/icons/icon-1.svg" alt="SVG">
+                      <div class="media-body">
+                        <span class="u-header__promo-title">Get started</span>
+                        <small class="u-header__promo-text">Components and snippets</small>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+                <!-- End Promo Item -->
+
+                <div class="u-header__promo-footer">
+                  <!-- List -->
+                  <div class="row no-gutters">
+                    <div class="col-6">
+                      <div class="u-header__promo-footer-item">
+                        <small class="text-muted d-block">Check what's new</small>
+                        <a class="small" href="#">
+                          Changelog
+                        </a>
+                      </div>
+                    </div>
+                    <div class="col-6 u-header__promo-footer-ver-divider">
+                      <div class="u-header__promo-footer-item">
+                        <small class="text-muted d-block">Have a question?</small>
+                        <a class="small" href="#">
+                          Contact us
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- End List -->
+                </div>
+              </div>
+              <!-- End Docs - Submenu -->
+            </li>
+            <!-- End Docs -->
+
+            <!-- Button -->
+            <li class="nav-item u-header__nav-last-item">
+                {% if user.is_authenticated %}
+                <a class="btn btn-sm btn-primary transition-3d-hover" href="{% url 'account_logout' %}">
+                    Sign Out
+                </a>
+                {% else %}
+                <a class="btn btn-sm btn-primary transition-3d-hover" href="{% url 'account_login' %}">
+                    Sign In
+                </a>
+                {% endif %}
+            </li>
+            <!-- End Button -->
+          </ul>
+        </div>
+        <!-- End Navigation -->
+      </nav>
+      <!-- End Nav -->
+    </div>
+  </div>
+</header>
